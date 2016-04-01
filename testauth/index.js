@@ -26,9 +26,11 @@ module.exports = function(context, req) {
                     }
                 }
             });
+            context.log("here-08");
         } catch(e) {
             context.log(e);
         }
+        context.log("here-09");
     } else {
         context.res = {
             status: 401,
