@@ -9,6 +9,7 @@ module.exports = function(context, req) {
             context.log(token);
             context.log(jwtKey);
             var vv = nJwt.verify(token, jwtKey);
+            context.log(vv);
             nJwt.verify(token, jwtKey, function(err, verified) {
                 context.log("here-01");
                 if (err) {
