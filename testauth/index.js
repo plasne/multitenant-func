@@ -5,6 +5,9 @@ module.exports = function(context, req) {
         var token = req.headers.authorization.replace("Bearer ", "");
         var jwtKey = process.env.jwtKey;
         try {
+            context.log("here-00");
+            context.log(token);
+            context.log(jwtKey);
             nJwt.verify(token, jwtKey, function(err, verified) {
                 context.log("here-01");
                 if (err) {
